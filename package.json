@@ -1,0 +1,23 @@
+{
+  "name": "react-janus-components",
+  "version": "1.0.0",
+  "description": "React components for Janus Plugins including Videoroom",
+  "main": "src/index.js",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webrtc-adapter": "^7.2.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avantrio/react-janus-components"
+  },
+  "keywords": [],
+  "author": "@manzzup",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avantrio/react-janus-components/issues"
+  },
+  "homepage": "https://github.com/avantrio/react-janus-components"
+}

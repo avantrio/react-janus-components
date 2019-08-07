@@ -1,0 +1,71 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.janus-video{
+  width: 500px;
+  height: 500px;
+}
+
+.janus-video-container{
+  background-color: #000;
+  width: 100%;
+}
+
+.janus-video-player{
+  width: 100%;
+  height: 300px;
+}
+
+.janus-video-status{
+  height: 20px;
+  padding: 10px 10px 5px 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.janus-video-controls{
+  height: 40px;
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  padding-left:10px;
+  padding-top: 5px;
+}
+
+.janus-btn{
+  font-size: 12px;
+  margin-right: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  height: 20px;
+  padding: 5px;
+  line-height: 20px;
+}
+
+.janus-btn:hover{
+  cursor: pointer;
+  background-color: #0000009a;
+}
+
+.janus-select{
+  margin-left: auto;
+  padding-right: 10px;
+  padding-top: 3px;
+}
+
+.janus-select select{
+  background-color: #0c71a0;
+  color: #fff;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  /* height: 50px; */
+  appearance: none;
+  /* line-height: 50px */
+}
+
+.janus-select select:focus{
+  outline: none;
+}
