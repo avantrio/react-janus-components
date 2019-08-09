@@ -12,5 +12,5 @@ npm package had an issue yesterday, fixed now and the example should work
 
 ## Usage
 
-1. Install Janus server, docker image is available at ...
+1. Install Janus server, docker image is available at https://hub.docker.com/r/manujith/janus
 2. Follow the example for Videoroom
