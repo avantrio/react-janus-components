@@ -42,14 +42,14 @@ const JanusPlayer = React.forwardRef((
                     )}
 
                     {status === "Live" && (
-                        <>
+                        <React.Fragment>
                             {isMuted && (
                                 <div className="janus-btn" onClick={onUnmute}>UnMute</div>
                             )}
                             {!isMuted && (
                                 <div className="janus-btn" onClick={onMute}>Mute</div>
                             )}
-                        </>  
+                        </React.Fragment>  
                     )}
 
                     <div className="janus-select">

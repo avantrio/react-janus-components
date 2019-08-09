@@ -54,7 +54,7 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId }) => {
 
                         const publisher = list[0];
                         const { id, display, audio_codec, video_codec} = publisher;
-                        remoteFeed = subscribeRemoteFeed(janus, opaqueId, room, id, pubPvtId, display, audio_codec, video_codec, remoteFeedCallback);
+                        subscribeRemoteFeed(janus, opaqueId, room, id, pubPvtId, display, audio_codec, video_codec, remoteFeedCallback);
                     }
                 }else if(eventType === "publishers"){
                     if(data.publishers !== undefined && data.publishers !== null) {
@@ -66,7 +66,7 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId }) => {
 
                         const publisher = list[0];
                         const { id, display, audio_codec, video_codec} = publisher;
-                        remoteFeed = subscribeRemoteFeed(janus, opaqueId, room, id, pubPvtId, display, audio_codec, video_codec, remoteFeedCallback);                    }
+                        subscribeRemoteFeed(janus, opaqueId, room, id, pubPvtId, display, audio_codec, video_codec, remoteFeedCallback);                    }
                 }else if(eventType === "leaving" || eventType === "unpublished"){
                     if(remoteFeed !== null){
                         remoteFeed.detach();
