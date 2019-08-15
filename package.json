@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "webrtc-adapter": "^7.2.9"
+    "webrtc-adapter": "^6.4.8"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
