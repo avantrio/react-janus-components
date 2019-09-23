@@ -76,12 +76,12 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId, children }) =
         );
     }, [janus, room, pubId, pubPvtId])
 
-    const playerElement = children ? children : JanusPlayer;
+    const playerElement = children ? children : <JanusPlayer />;
 
     return (
         <div className="janus-subscriber">
             <div className="janus-video">
-                { React.cloneElement(children, { 
+                { React.cloneElement(playerElement, { 
                     ref: videoArea,
                     isPublisher: false,
                     status: playerState

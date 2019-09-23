@@ -3,7 +3,7 @@ import Janus from './utils/janus';
 import { publishToRoom, publishOwnFeed, unpublishOwnFeed } from './utils/publisher';
 import JanusPlayer from './JanusPlayer';
 
-const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom, setPubId, setPubPvtId }) => {
+const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom, setPubId, setPubPvtId, children }) => {
     const [playerState, setPlayerState] = useState("Ready");
     const [isMuted, setIsMuted] = useState(false);
     const [sfutest, setSfuTest] = useState(null);
@@ -77,10 +77,23 @@ const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom,
         sfutest.send({"message": { "request": "configure", "bitrate": bitrate }});
     }
 
+    const playerElement = children ? children : <JanusPlayer />;
+
     return (
         <div className="janus-publisher">
             <div className="janus-video">
-                <JanusPlayer  
+                { React.cloneElement(playerElement, { 
+                    ref: videoArea,
+                    isPublisher: true,
+                    status:playerState,
+                    isMuted:isMuted,
+                    onStart:onStartClick,
+                    onStop:onStopClick,
+                    onMute:onMuteClick, 
+                    onUnmute:onUnMuteClick, 
+                    onBandwidthChange:onBandwidthChange
+                }) }
+                {/* <JanusPlayer  
                     ref={videoArea}
                     isPublisher={true}
                     status={playerState}
@@ -90,7 +103,7 @@ const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom,
                     onMute={onMuteClick} 
                     onUnmute={onUnMuteClick} 
                     onBandwidthChange={onBandwidthChange}
-                />
+                /> */}
             </div>
         </div>
     )
