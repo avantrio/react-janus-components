@@ -5,7 +5,7 @@ import { publishToRoom } from './utils/publisher';
 import { subscribeRemoteFeed } from './utils/subscriber';
 import JanusPlayer from './JanusPlayer';
 
-const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId }) => {
+const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId, children }) => {
     const videoArea = useRef(null);
     const [playerState, setPlayerState] = useState("Ready");
     const [sfutest, setSfuTest] = useState(null);
@@ -76,14 +76,21 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId }) => {
         );
     }, [janus, room, pubId, pubPvtId])
 
+    const playerElement = children ? children : JanusPlayer;
+
     return (
         <div className="janus-subscriber">
             <div className="janus-video">
-                <JanusPlayer 
+                { React.cloneElement(children, { 
+                    ref=videoArea,
+                    isPublisher=false,
+                    status=playerState
+                }) }
+                {/* <JanusPlayer 
                     ref={videoArea}
                     isPublisher={false}
                     status={playerState}
-                />
+                /> */}
             </div>
         </div>
     )
