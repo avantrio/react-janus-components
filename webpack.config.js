@@ -31,5 +31,8 @@ module.exports = {
   },
   externals: {
     'react': 'commonjs react' 
+  },
+  resolve: {
+    symlinks: true
   }
 };

@@ -20,16 +20,16 @@ const JanusPlayer = React.forwardRef((
         <div className="janus-video-container" ref={ref}>
             <div className="janus-video-status">
                 {status === "Ready" && (
-                    <span style={{color:"grey"}}>{ readyText | 'Ready' }</span>
+                    <span style={{color:"grey"}}>Ready</span>
                 )}
                 {status === "Paused" && (
-                    <span style={{color:"grey"}}>{ pausedText | 'Paused' }</span>
+                    <span style={{color:"grey"}}>Paused</span>
                 )}
                 {status === "Live" && (
-                    <span style={{color:"green"}}>{ liveText | 'Live' }</span>
+                    <span style={{color:"green"}}>Live</span>
                 )}
                 {status === "Error" && (
-                    <span style={{color:"red"}}>{ errorText | 'Error' }</span>
+                    <span style={{color:"red"}}>Error</span>
                 )}
             </div>
             <video 

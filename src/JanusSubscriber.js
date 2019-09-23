@@ -82,9 +82,9 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId, children }) =
         <div className="janus-subscriber">
             <div className="janus-video">
                 { React.cloneElement(children, { 
-                    ref=videoArea,
-                    isPublisher=false,
-                    status=playerState
+                    ref: videoArea,
+                    isPublisher: false,
+                    status: playerState
                 }) }
                 {/* <JanusPlayer 
                     ref={videoArea}
