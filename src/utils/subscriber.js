@@ -18,7 +18,8 @@ export function subscribeRemoteFeed(janus, opaqueId, room, id, pvtId, display, a
                     "room": room, 
                     "ptype": "subscriber", 
                     "feed": id, 
-                    "private_id": pvtId 
+					"private_id": pvtId ,
+					"data": true
                 };
 
 				if(Janus.webRTCAdapter.browserDetails.browser === "safari" &&

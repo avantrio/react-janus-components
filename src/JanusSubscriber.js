@@ -2,8 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import $ from 'jquery';
 import Janus from './utils/janus';
 import { publishToRoom } from './utils/publisher';
-import { subscribeRemoteFeed } from './utils/subscriber';
+import { subscribeRemoteFeed, sendData } from './utils/subscriber';
 import JanusPlayer from './JanusPlayer';
+import JanusChat from './JanusChat';
 
 const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId, children }) => {
     const videoArea = useRef(null);
@@ -77,7 +78,7 @@ const JanusSubscriber = ({ janus, opaqueId, room, pubId, pubPvtId, children }) =
     }, [janus, room, pubId, pubPvtId])
 
     const playerElement = children ? children : <JanusPlayer />;
-
+    
     return (
         <div className="janus-subscriber">
             <div className="janus-video">

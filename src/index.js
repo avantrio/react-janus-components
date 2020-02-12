@@ -5,6 +5,7 @@ import JanusVideoRoom from './JanusVideoRoom';
 import JanusPublisher from './JanusPublisher';
 import JanusSubscriber from './JanusSubscriber';
 import JanusPlayer from './JanusPlayer';
+import JanusChat from './JanusChat';
 
 export {
     Janus,
@@ -12,5 +13,6 @@ export {
     JanusVideoRoom,
     JanusPublisher,
     JanusSubscriber,
-    JanusPlayer
+    JanusPlayer,
+    JanusChat
 }

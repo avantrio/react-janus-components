@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Janus from './utils/janus';
-import { publishToRoom, publishOwnFeed, unpublishOwnFeed } from './utils/publisher';
+import { publishToRoom, publishOwnFeed, unpublishOwnFeed, sendData, publishChatroom } from './utils/publisher';
 import JanusPlayer from './JanusPlayer';
+import JanusChat from './JanusChat';
 
 const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom, setPubId, setPubPvtId, children }) => {
     const [playerState, setPlayerState] = useState("Ready");
@@ -93,17 +94,6 @@ const JanusPublisher = ({ janus, opaqueId, room, secret, pin, username, setRoom,
                     onUnmute:onUnMuteClick, 
                     onBandwidthChange:onBandwidthChange
                 }) }
-                {/* <JanusPlayer  
-                    ref={videoArea}
-                    isPublisher={true}
-                    status={playerState}
-                    isMuted={isMuted}
-                    onStart={onStartClick}
-                    onStop={onStopClick}
-                    onMute={onMuteClick} 
-                    onUnmute={onUnMuteClick} 
-                    onBandwidthChange={onBandwidthChange}
-                /> */}
             </div>
         </div>
     )

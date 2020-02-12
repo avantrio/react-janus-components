@@ -16,7 +16,7 @@ export function publishToRoom(janus, opaqueId, room, secret,
             opaqueId: opaqueId,
             success: function (pluginHandle) {
                 sfutest = pluginHandle;
-                Janus.log("  -- This is a publisher/manager");
+                Janus.log("  -- This is a publisher/manager ss");
                 
                 // if room is available
                 if(isPublisher){    
@@ -157,7 +157,7 @@ export function publishOwnFeed(sfutest, useAudio) {
 				} else {
 					Janus.log("Error publishing feed: " + error);
 				}
-			}
+            }
 		});
 }
 

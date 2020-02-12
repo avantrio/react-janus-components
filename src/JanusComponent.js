@@ -44,9 +44,16 @@ const JanusComponent = ({ children, server }) => {
     
     return (
         <div className="janus-container" ref={janusEl}>
-            {children && (
-                React.cloneElement(children, { janus: janusInstance })
-            )}            
+            {children &&
+                children.length && 
+                    children.map((child, i) => (
+                        React.cloneElement(child, { janus: janusInstance, key: i })
+                    ))
+            }
+            {children &&
+                !children.length && 
+                    React.cloneElement(children, { janus: janusInstance })
+            }    
         </div>
     );
 }
